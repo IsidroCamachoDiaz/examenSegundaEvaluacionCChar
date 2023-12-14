@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "csi21-icamiaz", "csi21-icamiaz\csi21-icamiaz.csproj", "{5B362CB1-F952-46AB-AA74-C784F346B9D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{C56A68B9-7194-44D8-BF2D-07FE7741B1E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B362CB1-F952-46AB-AA74-C784F346B9D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B362CB1-F952-46AB-AA74-C784F346B9D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B362CB1-F952-46AB-AA74-C784F346B9D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B362CB1-F952-46AB-AA74-C784F346B9D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C56A68B9-7194-44D8-BF2D-07FE7741B1E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C56A68B9-7194-44D8-BF2D-07FE7741B1E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C56A68B9-7194-44D8-BF2D-07FE7741B1E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C56A68B9-7194-44D8-BF2D-07FE7741B1E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A3AF4E7F-765B-4515-A879-AC9F94C6A9F8}
+	EndGlobalSection
+EndGlobal
