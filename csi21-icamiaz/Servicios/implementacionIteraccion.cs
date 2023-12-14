@@ -46,12 +46,23 @@ namespace csi21_icamiaz.Servicios
 						List<vajillaDTO> vajillaMeter = new List<vajillaDTO>();
 						vajillaMeter.Add(vas[iVajilla]);
 						List <Reserva> resEs = ges.Reservas.ToList();
+						
 						for(int i=0;i<resEs.Count;i++)
 						{
 							if (resEs[i].FchReserva==dia) {
 								Accione acio = new Accione(cantidad, resEs[i].IdReserva, vas[iVajilla].idElemento);
 								ges.Acciones.Add(acio);
 								ges.SaveChanges();
+								List <Vajilla> vC = ges.Vajillas.ToList();
+								for(int j=0;j<vC.Count;j++)
+								{
+									if (vC[j].IdElemento== vas[iVajilla].idElemento) {
+										vC[j].CantidadElemento = vC[j].CantidadElemento - cantidad;
+										ges.Vajillas.Update(vC[j]);
+										ges.SaveChanges();
+									}
+								}
+								
 							}
 						}
 						
