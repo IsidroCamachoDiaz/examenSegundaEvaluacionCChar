@@ -1,4 +1,4 @@
-﻿using DAL.Models;
+﻿
 
 namespace csi21_icamiaz.DTOS
 {
@@ -17,10 +17,11 @@ namespace csi21_icamiaz.DTOS
 			this.fchReserva = fchReserva;
 
 		}
-
-		public reservaDTO( DateTime fchReserva)
+		public reservaDTO(DateTime fchReserva)
 		{
-			this.fchReserva = fchReserva;
+			this.fchReserva= fchReserva;
+
 		}
+
 	}
 }

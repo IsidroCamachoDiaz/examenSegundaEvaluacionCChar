@@ -1,5 +1,6 @@
 ﻿using csi21_icamiaz.DTOS;
 using DAL.Models;
+using System.Security.Cryptography;
 
 namespace csi21_icamiaz.Servicios
 {
@@ -25,6 +26,11 @@ namespace csi21_icamiaz.Servicios
 				
 				vasD= ges.Vajillas.ToList();
 				vas=Util.pasarDaoDtoVajilla(vasD);
+				reservaDTO re = new reservaDTO(dia);
+				res.Add(re);
+				resd = Util.pasarDtoDaoReserva(res);
+				ges.Reservas.Add(resd[resd.Count - 1]);
+				ges.SaveChanges();
 				if (ges.Vajillas.ToList().Count == 0)
 				{
 					Console.WriteLine("No hay vajilla par añadir");
@@ -36,17 +42,24 @@ namespace csi21_icamiaz.Servicios
 							Console.WriteLine("Vajilla: {0} Nombre: {1} Descripcion: {2} Cantidad: {3}", i, vas[i].nombreElemento, vas[i].descripcion, vas[i].cantidad);
 						}
 						int iVajilla = Util.CapturaEntero(0, vas.Count - 1, "Indique el id de la vajilla");
+						int cantidad = Util.CapturaEntero(0, vas[iVajilla].cantidad, "Que cantidad quiere");
 						List<vajillaDTO> vajillaMeter = new List<vajillaDTO>();
 						vajillaMeter.Add(vas[iVajilla]);
-	                    //Como se creo mal la tabla no pude hacer esta parte
+						List <Reserva> resEs = ges.Reservas.ToList();
+						for(int i=0;i<resEs.Count;i++)
+						{
+							if (resEs[i].FchReserva==dia) {
+								Accione acio = new Accione(cantidad, resEs[i].IdReserva, vas[iVajilla].idElemento);
+								ges.Acciones.Add(acio);
+								ges.SaveChanges();
+							}
+						}
+						
 
 					}
 				}
-				reservaDTO re = new reservaDTO(dia);
-				res.Add(re);
-				resd = Util.pasarDtoDaoReserva(res);
-				ges.Reservas.Add(resd[resd.Count - 1]);
-				ges.SaveChanges();
+				
+				
 
 			}
 			catch(Exception ex)

@@ -41,7 +41,7 @@ namespace csi21_icamiaz.Servicios
 			List<reservaDTO> reservas = new List<reservaDTO>();
 			for (int i = 0; i < res.Count; i++)
 			{
-				reservas.Add(new reservaDTO(res[i].getIdReserva(),res[i].getFecha()));
+				reservas.Add(new reservaDTO(res[i].IdReserva,res[i].FchReserva));
 			}
 			return reservas;
 		}
@@ -56,10 +56,10 @@ namespace csi21_icamiaz.Servicios
 			List<vajillaDTO> vajillas = new List<vajillaDTO>();
 			for (int i = 0; i < res.Count; i++)
 			{
-				vajillas.Add(new vajillaDTO(res[i].getIdElemento(),
-						res[i].getCodigoElemento(),
-						res[i].getNombreElemento(),
-						 res[i].getDescripcionElemento(), res[i].getCantidad()));
+				vajillas.Add(new vajillaDTO(res[i].IdElemento,
+						res[i].CodigoElemento,
+						res[i].NombreElemento,
+						 res[i].DescripcionElemento, res[i].CantidadElemento));
 			}
 			return vajillas;
 		}
@@ -75,7 +75,7 @@ namespace csi21_icamiaz.Servicios
 			List<Vajilla> vajillas = new List<Vajilla>();
 			for (int i = 0; i < res.Count; i++)
 			{
-				vajillas.Add(new Vajilla( res[i].nombreElemento, res[i].descripcion, res[i].cantidad, res[i].getCodigoElemento()));
+				vajillas.Add(new Vajilla( res[i].nombreElemento, res[i].descripcion, res[i].codigoElemento, res[i].cantidad));
 			}
 			return vajillas;
 		}
@@ -116,4 +116,5 @@ namespace csi21_icamiaz.Servicios
             } while (true);
 		}
 	}
+	
 }
